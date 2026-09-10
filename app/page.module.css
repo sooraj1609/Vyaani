@@ -1,0 +1,30 @@
+.hero {
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(/vyaani-bg-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 8vh;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url(/vyaani-bg-laptop.jpg);
+    padding-bottom: 6vh;
+  }
+}
+
+.tagline {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  color: #D4AF37;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  margin: 0;
+}
