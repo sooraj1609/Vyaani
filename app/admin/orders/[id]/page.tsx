@@ -37,21 +37,25 @@ export default function AdminOrderDetail() {
 
   const updateStatus = async () => {
   setSaving(true)
-  const { data, error } = await supabase
-    .from('orders')
-    .update({ status, tracking_number: trackingNumber, courier_name: courierName })
-    .eq('id', id)
-    .select()
 
-  console.log('Update result:', { data, error })
+  const res = await fetch(`/api/admin/orders/${id}`, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      status,
+      tracking_number: trackingNumber,
+      courier_name: courierName,
+    }),
+  })
 
-  if (error) {
-    alert('Failed to update: ' + error.message)
-  } else if (!data || data.length === 0) {
-    alert('Update ran but no rows changed — likely an RLS issue')
+  const result = await res.json()
+
+  if (!res.ok) {
+    alert('Failed to update: ' + result.error)
   } else {
-    setOrder({ ...order, status, tracking_number: trackingNumber, courier_name: courierName })
+    setOrder(result.order)
   }
+
   setSaving(false)
 }
 
