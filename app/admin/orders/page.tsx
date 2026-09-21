@@ -1,12 +1,11 @@
-import { supabase } from '@/lib/supabase'
 import Link from 'next/link'
 import styles from '../products/products.module.css'
 
 export default async function AdminOrders() {
-  const { data: orders, error } = await supabase
-    .from('orders')
-    .select('*, order_items(quantity)')
-    .order('created_at', { ascending: false })
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/admin/orders`, {
+    cache: 'no-store',
+  })
+  const { orders, error } = await res.json()
 
   return (
     <div className={styles.wrapper}>
@@ -14,7 +13,7 @@ export default async function AdminOrders() {
         <h1>Orders</h1>
       </div>
 
-      {error && <p className={styles.error}>Error loading orders: {error.message}</p>}
+      {error && <p className={styles.error}>Error loading orders: {error}</p>}
 
       <table className={styles.table}>
         <thead>
@@ -29,7 +28,7 @@ export default async function AdminOrders() {
           </tr>
         </thead>
         <tbody>
-          {orders?.map((order) => {
+          {orders?.map((order: any) => {
             const itemCount = order.order_items?.reduce((sum: number, i: any) => sum + i.quantity, 0) || 0
             return (
               <tr key={order.id}>
@@ -38,9 +37,7 @@ export default async function AdminOrders() {
                 <td>{itemCount} item{itemCount !== 1 ? 's' : ''}</td>
                 <td>₹{order.total_amount}</td>
                 <td>
-                  <span
-                    className={order.status === 'paid' ? styles.active : styles.inactive}
-                  >
+                  <span className={order.status === 'paid' ? styles.active : styles.inactive}>
                     {order.status}
                   </span>
                 </td>

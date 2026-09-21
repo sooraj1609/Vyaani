@@ -21,11 +21,8 @@ export default function AdminOrderDetail() {
 
   useEffect(() => {
     async function load() {
-      const { data } = await supabase
-        .from('orders')
-        .select('*, order_items(*, product_variants(variant_name, products(name)))')
-        .eq('id', id)
-        .single()
+      const res = await fetch(`/api/order/${id}`)
+      const { order: data } = await res.json()
 
       if (data) {
         setOrder(data)
