@@ -36,16 +36,24 @@ export default function AdminOrderDetail() {
   }, [id])
 
   const updateStatus = async () => {
-    setSaving(true)
-    const { error } = await supabase
-      .from('orders')
-      .update({ status, tracking_number: trackingNumber, courier_name: courierName })
-      .eq('id', id)
-    if (!error) {
-      setOrder({ ...order, status, tracking_number: trackingNumber, courier_name: courierName })
-    }
-    setSaving(false)
+  setSaving(true)
+  const { data, error } = await supabase
+    .from('orders')
+    .update({ status, tracking_number: trackingNumber, courier_name: courierName })
+    .eq('id', id)
+    .select()
+
+  console.log('Update result:', { data, error })
+
+  if (error) {
+    alert('Failed to update: ' + error.message)
+  } else if (!data || data.length === 0) {
+    alert('Update ran but no rows changed — likely an RLS issue')
+  } else {
+    setOrder({ ...order, status, tracking_number: trackingNumber, courier_name: courierName })
   }
+  setSaving(false)
+}
 
   if (loading) return <div className={styles.wrapper}>Loading...</div>
   if (!order) return <div className={styles.wrapper}>Order not found.</div>
