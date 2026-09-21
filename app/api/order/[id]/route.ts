@@ -12,11 +12,15 @@ export async function GET(
 ) {
   const { id } = await params
 
-  const { data: order, error } = await supabaseAdmin
+  const query = supabaseAdmin
     .from('orders')
     .select('*, order_items(*, product_variants(variant_name, products(name)))')
-    .eq('id', id)
-    .single()
+
+  const isFullUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
+
+  const { data: order, error } = isFullUuid
+    ? await query.eq('id', id).single()
+    : await query.ilike('id', `${id}%`).single()
 
   if (error || !order) {
     return NextResponse.json({ error: 'Order not found' }, { status: 404 })
