@@ -1,5 +1,6 @@
 import { supabase } from '@/lib/supabase'
 import ProductDetailClient from './ProductDetailClient'
+import RelatedProducts from './RelatedProducts'
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -19,5 +20,18 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     )
   }
 
-  return <ProductDetailClient product={product} />
+  const { data: relatedProducts } = await supabase
+    .from('products')
+    .select('*, product_images(image_url, display_order)')
+    .eq('category_id', product.category_id)
+    .eq('is_active', true)
+    .neq('id', product.id)
+    .limit(4)
+
+  return (
+    <>
+      <ProductDetailClient product={product} />
+      <RelatedProducts products={relatedProducts || []} />
+    </>
+  )
 }
