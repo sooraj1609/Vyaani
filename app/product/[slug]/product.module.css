@@ -167,3 +167,14 @@
   line-height: 1.6;
   margin-bottom: 6px;
 }
+.wishlistBtn {
+  width: 100%;
+  padding: 12px;
+  background: none;
+  border: 1px solid #E8DFD3;
+  color: #7A1C2B;
+  cursor: pointer;
+  font-size: 13px;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}

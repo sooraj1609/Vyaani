@@ -38,6 +38,9 @@ export default function AccountDashboard() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
+        <Link href="/account/wishlist" style={{ color: '#7A1C2B', fontSize: 13, fontFamily: 'Arial, sans-serif', textDecoration: 'underline' }}>
+  View Wishlist
+</Link>
         <div>
           <h1>My Account</h1>
           <p className={styles.email}>{user.email}</p>

@@ -3,9 +3,13 @@
 import { useState } from 'react'
 import { useCart } from '@/lib/CartContext'
 import styles from './product.module.css'
+import { useWishlist } from '@/lib/WishlistContext'
+
 
 export default function ProductDetailClient({ product }: { product: any }) {
   const { addItem } = useCart()
+  const { toggleWishlist, isWishlisted } = useWishlist()
+  const wishlisted = isWishlisted(product.id)
   const images = [...(product.product_images || [])].sort(
     (a: any, b: any) => a.display_order - b.display_order
   )
@@ -89,6 +93,12 @@ export default function ProductDetailClient({ product }: { product: any }) {
         >
           {added ? 'Added ✓' : outOfStock ? 'Out of Stock' : 'Add to Bag'}
         </button>
+        <button
+  onClick={() => toggleWishlist(product.id)}
+  className={styles.wishlistBtn}
+>
+  {wishlisted ? '♥ Saved' : '♡ Save for later'}
+</button>
 
         <div className={styles.trustBadges}>
           <div className={styles.badge}>

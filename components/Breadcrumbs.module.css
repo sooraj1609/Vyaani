@@ -1,0 +1,27 @@
+.breadcrumbs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 40px 0;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: #8A756A;
+}
+
+.breadcrumbs a {
+  color: #8A756A;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  color: #7A1C2B;
+  text-decoration: underline;
+}
+
+.separator {
+  margin: 0 8px;
+  color: #C9B8A8;
+}
+
+.current {
+  color: #2A0E12;
+}

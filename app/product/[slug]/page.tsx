@@ -1,13 +1,14 @@
 import { supabase } from '@/lib/supabase'
 import ProductDetailClient from './ProductDetailClient'
 import RelatedProducts from './RelatedProducts'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
 
   const { data: product } = await supabase
     .from('products')
-    .select('*, product_images(image_url, display_order), product_variants(*)')
+    .select('*, product_images(image_url, display_order), product_variants(*), categories(name, slug)')
     .eq('slug', slug)
     .eq('is_active', true)
     .single()
@@ -30,6 +31,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          ...(product.categories
+            ? [{ label: product.categories.name, href: `/category/${product.categories.slug}` }]
+            : []),
+          { label: product.name },
+        ]}
+      />
       <ProductDetailClient product={product} />
       <RelatedProducts products={relatedProducts || []} />
     </>
