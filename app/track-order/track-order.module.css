@@ -114,3 +114,16 @@
   color: #7A1C2B;
   font-weight: bold;
 }
+.trackingBox {
+  background: #F0F7F0;
+  border: 1px solid #C8E0C8;
+  padding: 14px;
+  margin: 16px 0;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #2A0E12;
+}
+
+.trackingBox p {
+  margin: 4px 0;
+}

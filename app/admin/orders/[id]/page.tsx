@@ -15,6 +15,8 @@ export default function AdminOrderDetail() {
   const [order, setOrder] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [status, setStatus] = useState('')
+  const [trackingNumber, setTrackingNumber] = useState('')
+  const [courierName, setCourierName] = useState('')
   const [saving, setSaving] = useState(false)
 
   useEffect(() => {
@@ -28,6 +30,8 @@ export default function AdminOrderDetail() {
       if (data) {
         setOrder(data)
         setStatus(data.status)
+        setTrackingNumber(data.tracking_number || '')
+        setCourierName(data.courier_name || '')
       }
       setLoading(false)
     }
@@ -36,9 +40,12 @@ export default function AdminOrderDetail() {
 
   const updateStatus = async () => {
     setSaving(true)
-    const { error } = await supabase.from('orders').update({ status }).eq('id', id)
+    const { error } = await supabase
+      .from('orders')
+      .update({ status, tracking_number: trackingNumber, courier_name: courierName })
+      .eq('id', id)
     if (!error) {
-      setOrder({ ...order, status })
+      setOrder({ ...order, status, tracking_number: trackingNumber, courier_name: courierName })
     }
     setSaving(false)
   }
@@ -99,21 +106,52 @@ export default function AdminOrderDetail() {
       </div>
 
       <div className={formStyles.section} style={{ maxWidth: 600 }}>
-        <h2>Status</h2>
-        <div className={formStyles.addRow}>
+        <h2>Status & Shipping</h2>
+
+        <div style={{ marginBottom: 12 }}>
+          <label style={{ display: 'block', fontSize: 12, color: '#6B5D52', fontFamily: 'Arial, sans-serif', marginBottom: 4 }}>
+            Order Status
+          </label>
           <select
             value={status}
             onChange={(e) => setStatus(e.target.value)}
-            style={{ padding: '8px 10px', border: '1px solid #E8DFD3', fontFamily: 'Arial, sans-serif' }}
+            style={{ padding: '8px 10px', border: '1px solid #E8DFD3', fontFamily: 'Arial, sans-serif', width: '100%' }}
           >
             {STATUS_OPTIONS.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>
-          <button onClick={updateStatus} disabled={saving} type="button">
-            {saving ? 'Saving...' : 'Update Status'}
-          </button>
         </div>
+
+        <div style={{ marginBottom: 12 }}>
+          <label style={{ display: 'block', fontSize: 12, color: '#6B5D52', fontFamily: 'Arial, sans-serif', marginBottom: 4 }}>
+            Courier Name
+          </label>
+          <input
+            type="text"
+            placeholder="e.g. Delhivery"
+            value={courierName}
+            onChange={(e) => setCourierName(e.target.value)}
+            style={{ padding: '8px 10px', border: '1px solid #E8DFD3', fontFamily: 'Arial, sans-serif', width: '100%' }}
+          />
+        </div>
+
+        <div style={{ marginBottom: 16 }}>
+          <label style={{ display: 'block', fontSize: 12, color: '#6B5D52', fontFamily: 'Arial, sans-serif', marginBottom: 4 }}>
+            Tracking Number
+          </label>
+          <input
+            type="text"
+            placeholder="e.g. 1234567890"
+            value={trackingNumber}
+            onChange={(e) => setTrackingNumber(e.target.value)}
+            style={{ padding: '8px 10px', border: '1px solid #E8DFD3', fontFamily: 'Arial, sans-serif', width: '100%' }}
+          />
+        </div>
+
+        <button onClick={updateStatus} disabled={saving} type="button">
+          {saving ? 'Saving...' : 'Update Status & Tracking'}
+        </button>
       </div>
     </div>
   )

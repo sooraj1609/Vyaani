@@ -112,3 +112,17 @@
   text-transform: uppercase;
   font-family: Arial, sans-serif;
 }
+.trackingBox {
+  background: #F0F7F0;
+  border: 1px solid #C8E0C8;
+  padding: 14px;
+  margin-bottom: 24px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #2A0E12;
+  text-align: left;
+}
+
+.trackingBox p {
+  margin: 4px 0;
+}

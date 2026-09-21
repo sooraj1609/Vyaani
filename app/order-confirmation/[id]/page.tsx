@@ -42,6 +42,13 @@ export default async function OrderConfirmationPage({ params }: { params: Promis
           </div>
         </div>
 
+        {order.tracking_number && (
+          <div className={styles.trackingBox}>
+            <p><strong>Courier:</strong> {order.courier_name || 'N/A'}</p>
+            <p><strong>Tracking Number:</strong> {order.tracking_number}</p>
+          </div>
+        )}
+
         <div className={styles.items}>
           <h3>Items</h3>
           {order.order_items?.map((item: any) => (

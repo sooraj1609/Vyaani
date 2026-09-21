@@ -89,6 +89,12 @@ export default function TrackOrderPage() {
             <span>Placed on</span>
             <span>{new Date(order.created_at).toLocaleDateString('en-IN')}</span>
           </div>
+          {order.tracking_number && (
+  <div className={styles.trackingBox}>
+    <p><strong>Courier:</strong> {order.courier_name || 'N/A'}</p>
+    <p><strong>Tracking Number:</strong> {order.tracking_number}</p>
+  </div>
+)}
 
           <h3>Items</h3>
           {order.order_items?.map((item: any) => (
