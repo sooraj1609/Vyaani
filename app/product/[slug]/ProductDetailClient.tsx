@@ -89,6 +89,33 @@ export default function ProductDetailClient({ product }: { product: any }) {
         >
           {added ? 'Added ✓' : outOfStock ? 'Out of Stock' : 'Add to Bag'}
         </button>
+
+        <div className={styles.trustBadges}>
+          <div className={styles.badge}>
+            <span>🚚</span>
+            <span>Free shipping over ₹999</span>
+          </div>
+          <div className={styles.badge}>
+            <span>↩</span>
+            <span>7-day easy returns</span>
+          </div>
+          <div className={styles.badge}>
+            <span>🔒</span>
+            <span>Secure checkout</span>
+          </div>
+        </div>
+
+        {(product.material_details || product.care_instructions) && (
+          <div className={styles.detailsSection}>
+            <h3>Product Details</h3>
+            {product.material_details && (
+              <p><strong>Material:</strong> {product.material_details}</p>
+            )}
+            {product.care_instructions && (
+              <p><strong>Care:</strong> {product.care_instructions}</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )

@@ -129,3 +129,41 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+.trustBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #F0E8DB;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+}
+
+.detailsSection {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #F0E8DB;
+}
+
+.detailsSection h3 {
+  font-size: 15px;
+  color: #7A1C2B;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.detailsSection p {
+  font-size: 13px;
+  color: #2A0E12;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}

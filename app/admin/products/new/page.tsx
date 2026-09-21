@@ -12,6 +12,8 @@ export default function NewProduct() {
   const [name, setName] = useState('')
   const [slug, setSlug] = useState('')
   const [description, setDescription] = useState('')
+  const [materialDetails, setMaterialDetails] = useState('')
+  const [careInstructions, setCareInstructions] = useState('')
   const [price, setPrice] = useState('')
   const [categoryId, setCategoryId] = useState('')
   const [isActive, setIsActive] = useState(true)
@@ -43,6 +45,8 @@ export default function NewProduct() {
       name,
       slug,
       description,
+      material_details: materialDetails,
+      care_instructions: careInstructions,
       price: parseFloat(price),
       category_id: categoryId || null,
       is_active: isActive,
@@ -87,6 +91,26 @@ export default function NewProduct() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={4}
+          />
+        </label>
+
+        <label>
+          Material Details
+          <input
+            type="text"
+            value={materialDetails}
+            onChange={(e) => setMaterialDetails(e.target.value)}
+            placeholder="e.g. Gold-plated brass, anti-tarnish coating"
+          />
+        </label>
+
+        <label>
+          Care Instructions
+          <textarea
+            value={careInstructions}
+            onChange={(e) => setCareInstructions(e.target.value)}
+            rows={2}
+            placeholder="e.g. Avoid water and perfume contact. Store in a dry pouch."
           />
         </label>
 
