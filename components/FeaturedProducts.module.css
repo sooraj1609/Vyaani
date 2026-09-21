@@ -1,0 +1,56 @@
+.featured {
+  padding: 50px 40px;
+  text-align: center;
+  font-family: Georgia, serif;
+}
+
+.featured h2 {
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: #d6c8c8;
+  margin-bottom: 34px;
+  font-weight: normal;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.image {
+  aspect-ratio: 1;
+  background: repeating-linear-gradient(45deg, #F3ECE0, #F3ECE0 8px, #EDE3D3 8px, #EDE3D3 16px);
+  border: 1px solid #E8DFD3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #B08D3E;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card h4 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #d6c8c8;
+}
+
+.price {
+  font-size: 13px;
+  color: #d6c8c8;
+  font-family: Arial, sans-serif;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 

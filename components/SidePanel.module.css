@@ -1,0 +1,120 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 5, 7, 0.5);
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  background: #FBF7F2;
+  z-index: 31;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+  font-family: Georgia, serif;
+}
+.panel.open {
+  transform: translateX(0);
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 26px;
+  border-bottom: 1px solid #E8DFD3;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  color: #7A1C2B;
+  text-transform: lowercase;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #2A0E12;
+}
+
+.section {
+  padding: 10px 26px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #F0E8DB;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  color: #2A0E12;
+  font-family: Arial, sans-serif;
+}
+
+.chev {
+  color: #B08D3E;
+  font-size: 16px;
+}
+
+.sub {
+  padding: 20px 0 20px 14px;
+}
+
+.catRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.catThumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, #E8DFD3, #E8DFD3 5px, #F3ECE0 5px, #F3ECE0 10px);
+  border: 1.5px solid #E8C87A;
+  flex-shrink: 0;
+}
+
+.catRow span {
+  font-size: 13px;
+  color: #2A0E12;
+  font-family: Arial, sans-serif;
+}
+
+.footer {
+  padding: 20px 26px 30px;
+  border-top: 1px solid #E8DFD3;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #8A756A;
+  font-family: Arial, sans-serif;
+}
+.catRow {
+  text-decoration: none;
+  color: inherit;
+}
+.link {
+  text-decoration: none;
+  color: inherit;
+}

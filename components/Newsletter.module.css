@@ -1,0 +1,50 @@
+.newsletter {
+  background: #2A0E12;
+  color: #F5E9D3;
+  text-align: center;
+  padding: 60px 40px;
+  font-family: Georgia, serif;
+}
+
+.newsletter h2 {
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  margin-bottom: 10px;
+  color: #E8C87A;
+}
+
+.newsletter p {
+  font-size: 14px;
+  color: #D8C8B8;
+  margin-bottom: 26px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #B08D3E;
+  background: transparent;
+  color: #F5E9D3;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.form button {
+  padding: 12px 24px;
+  background: #E8C87A;
+  border: none;
+  color: #2A0E12;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+}

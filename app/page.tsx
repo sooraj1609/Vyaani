@@ -1,9 +1,19 @@
-import styles from './page.module.css'
+import Hero from '@/components/Hero'
+import CategoryStrip from '@/components/CategoryStrip'
+import CampaignBanner from '@/components/CampaignBanner'
+import FeaturedProducts from '@/components/FeaturedProducts'
+import Newsletter from '@/components/Newsletter'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
-    <div className={styles.hero}>
-      <h1 className={styles.tagline}>Coming Soon</h1>
-    </div>
+    <>
+      <Hero />
+      <CategoryStrip />
+      <CampaignBanner />
+      <FeaturedProducts />
+      <Newsletter />
+      <Footer />
+    </>
   )
 }

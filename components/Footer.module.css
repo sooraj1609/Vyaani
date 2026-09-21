@@ -1,0 +1,41 @@
+.footer {
+  background: #1C070A;
+  color: #C9B8A8;
+  padding: 50px 40px 24px;
+  font-family: Georgia, serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+}
+
+.col h5 {
+  color: #E8C87A;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  margin-bottom: 16px;
+}
+
+.col a {
+  display: block;
+  font-size: 13px;
+  color: #C9B8A8;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+}
+
+.bottom {
+  text-align: center;
+  font-size: 12px;
+  color: #8A756A;
+  border-top: 1px solid #3A1A1E;
+  padding-top: 20px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 0.03em;
+}

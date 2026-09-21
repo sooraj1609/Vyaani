@@ -1,0 +1,80 @@
+.wrapper {
+  min-height: 100vh;
+  background: #FBF7F2;
+  padding: 50px 40px;
+  font-family: Georgia, serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 26px;
+  color: #7A1C2B;
+}
+
+.addBtn {
+  background: #7A1C2B;
+  color: #F5E9D3;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 16px;
+  background: #F0E8DB;
+  color: #0a0a0a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E8DFD3;
+}
+
+.active {
+  color: #2E7D32;
+  font-size: 12px;
+}
+
+.inactive {
+  color: #999;
+  font-size: 12px;
+}
+
+.editLink {
+  color: #7A1C2B;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.empty {
+  padding: 30px;
+  text-align: center;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+}
+
+.error {
+  color: #B02A2A;
+  margin-bottom: 20px;
+}

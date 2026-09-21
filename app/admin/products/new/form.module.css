@@ -1,0 +1,142 @@
+.form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: white;
+  padding: 30px;
+  border: 1px solid #E8DFD3;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+}
+
+.form input,
+.form textarea,
+.form select {
+  padding: 10px 12px;
+  border: 1px solid #E8DFD3;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.checkboxLabel {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.checkboxLabel input {
+  width: auto;
+}
+
+.submitBtn {
+  padding: 12px;
+  background: #7A1C2B;
+  color: #F5E9D3;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #B02A2A;
+  font-size: 13px;
+}
+.deleteBtn {
+  padding: 12px;
+  background: transparent;
+  color: #B02A2A;
+  border: 1px solid #B02A2A;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  margin-top: -6px;
+}
+.section {
+  max-width: 500px;
+  margin-top: 30px;
+  background: white;
+  padding: 24px;
+  border: 1px solid #E8DFD3;
+}
+
+.section h2 {
+  font-size: 16px;
+  color: #7A1C2B;
+  margin-bottom: 16px;
+  font-family: Georgia, serif;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.imageCard {
+  border: 1px solid #E8DFD3;
+  padding: 6px;
+  text-align: center;
+}
+
+.imageCard img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.imageCard button {
+  font-size: 11px;
+  background: none;
+  border: 1px solid #B02A2A;
+  color: #B02A2A;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+.addRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.addRow input {
+  flex: 1;
+  min-width: 100px;
+  padding: 8px 10px;
+  border: 1px solid #111111;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+}
+
+.addRow button {
+  padding: 8px 16px;
+  background: #7A1C2B;
+  color: #F5E9D3;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-family: Arial, sans-serif;
+}

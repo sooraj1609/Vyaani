@@ -1,0 +1,104 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  font-family: Georgia, serif;
+}
+
+.form h1 {
+  font-size: 24px;
+  color: #7A1C2B;
+  margin-bottom: 24px;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+}
+
+.form input,
+.form textarea {
+  padding: 12px;
+  border: 1px solid #E8DFD3;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+.form button {
+  padding: 14px;
+  background: #7A1C2B;
+  color: #F5E9D3;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  margin-top: 8px;
+}
+
+.form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #B02A2A;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+}
+
+.summary {
+  background: white;
+  border: 1px solid #E8DFD3;
+  padding: 24px;
+  height: fit-content;
+}
+
+.summary h2 {
+  font-size: 16px;
+  color: #7A1C2B;
+  margin-bottom: 16px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #2A0E12;
+  font-family: Arial, sans-serif;
+  padding: 8px 0;
+  border-bottom: 1px solid #F0E8DB;
+}
+
+.summaryTotal {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: #7A1C2B;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  padding-top: 14px;
+  margin-top: 8px;
+}
+.summaryDivider {
+  border-top: 1px solid #F0E8DB;
+  margin: 12px 0;
+}
+
+.discountValue {
+  color: #2E7D32;
+}

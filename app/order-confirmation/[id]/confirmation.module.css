@@ -1,0 +1,114 @@
+.wrapper {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #FBF7F2;
+  font-family: Georgia, serif;
+}
+
+.card {
+  background: white;
+  border: 1px solid #E8DFD3;
+  padding: 40px;
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2E7D32;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.card h1 {
+  font-size: 22px;
+  color: #7A1C2B;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 14px;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+  margin-bottom: 30px;
+}
+
+.orderInfo {
+  border-top: 1px solid #F0E8DB;
+  border-bottom: 1px solid #F0E8DB;
+  padding: 16px 0;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #2A0E12;
+  font-family: Arial, sans-serif;
+  padding: 6px 0;
+}
+
+.status {
+  text-transform: capitalize;
+  color: #2E7D32;
+  font-weight: bold;
+}
+
+.items {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.items h3 {
+  font-size: 14px;
+  color: #7A1C2B;
+  margin-bottom: 10px;
+}
+
+.itemRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #2A0E12;
+  font-family: Arial, sans-serif;
+  padding: 6px 0;
+}
+
+.shipping {
+  text-align: left;
+  margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: #6B5D52;
+}
+
+.shipping h3 {
+  font-size: 14px;
+  color: #7A1C2B;
+  margin-bottom: 8px;
+  font-family: Georgia, serif;
+}
+
+.homeLink {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #7A1C2B;
+  color: #F5E9D3;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+}

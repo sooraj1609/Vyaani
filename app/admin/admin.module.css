@@ -1,0 +1,44 @@
+.wrapper {
+  min-height: 100vh;
+  background: #FBF7F2;
+  padding: 50px 40px;
+  font-family: Georgia, serif;
+}
+
+.wrapper h1 {
+  font-size: 26px;
+  color: #7A1C2B;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #E8DFD3;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #B08D3E;
+}
+
+.card h2 {
+  font-size: 18px;
+  color: #7A1C2B;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+}

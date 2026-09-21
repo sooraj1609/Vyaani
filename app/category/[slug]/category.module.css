@@ -1,0 +1,73 @@
+.wrapper {
+  min-height: 60vh;
+  padding: 50px 40px;
+  font-family: Georgia, serif;
+  background: #FBF7F2;
+}
+
+.wrapper h1 {
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: #7A1C2B;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: capitalize;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.image {
+  aspect-ratio: 1;
+  background: repeating-linear-gradient(45deg, #F3ECE0, #F3ECE0 8px, #EDE3D3 8px, #EDE3D3 16px);
+  border: 1px solid #E8DFD3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #B08D3E;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h4 {
+  font-size: 15px;
+  font-weight: normal;
+  color: #2A0E12;
+  text-transform: capitalize;
+}
+
+.price {
+  font-size: 14px;
+  color: #7A1C2B;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+.empty {
+  text-align: center;
+  color: #6B5D52;
+  font-family: Arial, sans-serif;
+  padding: 40px 0;
+}

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/lib/CartContext";
+import { AuthProvider } from '@/lib/AuthContext'
+import Header from "@/components/Header";
+import CartDrawer from "@/components/CartDrawer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,17 +17,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vyaani accessories",
-  description: "Coming Soon",
+  title: "Vyaani | Fast Fashion Jewelry",
+  description: "Fast-fashion jewelry, crafted for the moment.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>
+        <AuthProvider>
+          <CartProvider>
+            <Header />
+            {children}
+            <CartDrawer />
+          </CartProvider>
+        </AuthProvider>
+        <script src="https://checkout.razorpay.com/v1/checkout.js" async />
+      </body>
     </html>
-  );
+  )
 }

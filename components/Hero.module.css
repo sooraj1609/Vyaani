@@ -1,0 +1,153 @@
+.hero {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  font-family: Georgia, serif;
+}
+
+.track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  width: 33.333%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.s1 { background: linear-gradient(135deg, #5A1420 0%, #7A1C2B 55%, #8E2233 100%); }
+.s2 { background: linear-gradient(135deg, #7A1C2B 0%, #8E2233 55%, #B0542F 100%); }
+.s3 { background: linear-gradient(135deg, #3A0E14 0%, #5A1420 55%, #7A1C2B 100%); }
+
+.placeholder {
+  position: absolute;
+  inset: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(232, 200, 122, 0.35);
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  border: 1px dashed rgba(232, 200, 122, 0.35);
+  text-transform: uppercase;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #F5E9D3;
+}
+.content h1 {
+  font-size: 48px;
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+.content p {
+  font-size: 16px;
+  font-style: italic;
+  color: #E8C87A;
+  letter-spacing: 0.04em;
+}
+
+.cta {
+  margin-top: 26px;
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #E8C87A;
+  color: #E8C87A;
+  padding: 12px 34px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(245, 233, 211, 0.15);
+  border: 1px solid rgba(232, 200, 122, 0.5);
+  color: #F5E9D3;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 3;
+}
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+.dots button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(245, 233, 211, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.dots button.active {
+  background: #E8C87A;
+}
+.logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.iconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2A0E12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+.iconBtn:hover {
+  color: #7A1C2B;
+}
+.iconBtn {
+  position: relative;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #7A1C2B;
+  color: #F5E9D3;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+}

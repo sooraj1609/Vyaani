@@ -10,15 +10,22 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",
+    "js-cookie": "^3.0.8",
+    "lucide-react": "^1.47.0",
     "next": "16.3.4",
+    "razorpay": "^2.9.8",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "resend": "^6.28.1",
+    "uuid": "^14.0.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.4",
     "tailwindcss": "^4",
