@@ -12,15 +12,31 @@ export async function GET(
 ) {
   const { id } = await params
 
-  const query = supabaseAdmin
-    .from('orders')
-    .select('*, order_items(*, product_variants(variant_name, products(name)))')
-
   const isFullUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)
 
-  const { data: order, error } = isFullUuid
-    ? await query.eq('id', id).single()
-    : await query.ilike('id', `${id}%`).single()
+  let order = null
+  let error = null
+
+  if (isFullUuid) {
+    const result = await supabaseAdmin
+      .from('orders')
+      .select('*, order_items(*, product_variants(variant_name, products(name)))')
+      .eq('id', id)
+      .single()
+    order = result.data
+    error = result.error
+  } else {
+    // Fetch recent orders and match the short ID prefix in JavaScript,
+    // since Postgres can't pattern-match a uuid column directly
+    const result = await supabaseAdmin
+      .from('orders')
+      .select('*, order_items(*, product_variants(variant_name, products(name)))')
+    const match = result.data?.find((o) =>
+      o.id.toLowerCase().startsWith(id.toLowerCase())
+    )
+    order = match || null
+    error = result.error
+  }
 
   if (error || !order) {
     return NextResponse.json({ error: 'Order not found' }, { status: 404 })
