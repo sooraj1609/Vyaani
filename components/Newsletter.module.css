@@ -48,3 +48,19 @@
   cursor: pointer;
   font-family: inherit;
 }
+.newsletter .success {
+  color: #E8C87A;
+  font-size: 13px;
+  margin: 16px 0 0;
+}
+
+.newsletter .error {
+  color: #F0A8A8;
+  font-size: 13px;
+  margin: 16px 0 0;
+}
+
+.form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

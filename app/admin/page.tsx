@@ -22,6 +22,10 @@ export default function AdminDashboard() {
           <h2>Coupons</h2>
           <p>Manage discount codes</p>
         </Link>
+        <Link href="/admin/newsletter" className={styles.card}>
+          <h2>Subscribers</h2>
+          <p>View newsletter signups</p>
+        </Link>
       </div>
     </div>
   )
