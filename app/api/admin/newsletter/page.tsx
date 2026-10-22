@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import styles from '../products/products.module.css'
+import styles from 'app/admin/products/products.module.css'
 
 type Subscriber = { id: string; email: string; created_at: string }
 
