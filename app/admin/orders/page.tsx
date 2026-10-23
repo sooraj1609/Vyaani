@@ -1,38 +1,22 @@
-
 import Link from 'next/link'
+import { createClient } from '@supabase/supabase-js'
 import styles from '../products/products.module.css'
-import { cookies } from 'next/headers'
+
+export const dynamic = 'force-dynamic'
+
+const supabaseAdmin = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!
+)
 
 export default async function AdminOrders() {
-  let orders = []
-  let error = null
+  const { data, error: dbError } = await supabaseAdmin
+    .from('orders')
+    .select('*, order_items(quantity)')
+    .order('created_at', { ascending: false })
 
-  try {
-    const cookieStore = await cookies()
-
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_SITE_URL}/api/admin/orders`,
-      {
-        cache: 'no-store',
-        headers: {
-          Cookie: cookieStore.toString(),
-        },
-      }
-    )
-
-    if (!res.ok) {
-      throw new Error(`Failed to fetch orders (${res.status})`)
-    }
-
-    const data = await res.json()
-    orders = data.orders ?? []
-    error = data.error ?? null
-  } catch (err) {
-    error =
-      err instanceof Error
-        ? err.message
-        : 'An unexpected error occurred'
-  }
+  const orders = data ?? []
+  const error = dbError?.message ?? null
 
   return (
     <div className={styles.wrapper}>
